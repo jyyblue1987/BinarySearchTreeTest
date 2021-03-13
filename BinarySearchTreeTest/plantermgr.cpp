@@ -87,8 +87,8 @@ void plantermgr::search(planter *root, char *name, int start, int end)
 	if( strcmp(name, root->name) == 0 && start <= root->num && root->num <= end )
 		cout << root->num << endl;
 	
-	search(root->left, name, start, root->num);
-	search(root->right, name, root->num, end);
+	search(root->left, name, start, end);
+	search(root->right, name, start, end);
 }
 
 
@@ -96,6 +96,8 @@ void plantermgr::prune(int num)
 {
 	if (root == NULL)
 		return;
+
+	cout << "Pruning box number " << num << "." << endl;
 
 	planter *curNode = root;
 	planter* prevNode = root;
