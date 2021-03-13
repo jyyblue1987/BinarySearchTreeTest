@@ -71,9 +71,11 @@ void plantermgr::harvest(char *name, int start, int end)
 	if (root == NULL)
 		return;
 
-	cout << "Harvesting " << name << " from boxes " << start << " to " << end << ". The following boxes will be harvested: " << endl;
+	cout << "Harvesting " << name << " from boxes " << start << " to " << end << ". The following boxes will be harvested:";
 
 	search(root, name, start, end);
+
+	cout << endl << endl;	
 }
 
 void plantermgr::search(planter *root, char *name, int start, int end)
@@ -85,7 +87,7 @@ void plantermgr::search(planter *root, char *name, int start, int end)
 		return;
 
 	if( strcmp(name, root->name) == 0 && start <= root->num && root->num <= end )
-		cout << root->num << endl;
+		cout << " " << root->num;
 	
 	search(root->left, name, start, end);
 	search(root->right, name, start, end);
