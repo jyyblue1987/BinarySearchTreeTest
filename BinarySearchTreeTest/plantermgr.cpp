@@ -61,6 +61,8 @@ void plantermgr::plant(int num, char *name)
 	node->name = new char[strlen(name) + 1];
 	strcpy(node->name, name);
 
+	cout << "Planting " << name << " in box " << num << endl;
+
 	root = insert(root, node);
 }
 
@@ -68,6 +70,8 @@ void plantermgr::harvest(char *name, int start, int end)
 {
 	if (root == NULL)
 		return;
+
+	cout << "Harvesting " << name << " from boxes " << start << " to " << end << ". The following boxes will be harvested: " << endl;
 
 	search(root, name, start, end);
 }

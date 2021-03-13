@@ -21,7 +21,7 @@ void plant(plantermgr& planterMgr,char* line)
 	num = atoi(ptr);
     }
     name = strtok(nullptr,delim);
-    planterMgr.plant(num, name);
+    planterMgr.plant(num,name);
 }
 
 // Harvest a plant
