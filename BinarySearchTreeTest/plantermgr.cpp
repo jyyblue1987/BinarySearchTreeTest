@@ -86,10 +86,11 @@ void plantermgr::search(planter *root, char *name, int start, int end)
 	if( root == NULL )
 		return;
 
+	search(root->left, name, start, end);
+
 	if( strcmp(name, root->name) == 0 && start <= root->num && root->num <= end )
 		cout << " " << root->num;
-	
-	search(root->left, name, start, end);
+
 	search(root->right, name, start, end);
 }
 
